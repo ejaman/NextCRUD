@@ -18,8 +18,8 @@ export default function TodoLayout({ children }: Props) {
     <>
       <div>TODO layout</div>
       <nav>
-        <Link href="/post/study">Study</Link>
-        <Link href="/post/workout">Work out</Link>
+        <Link href="/todos/study">Study</Link>
+        <Link href="/todos/workout">Work out</Link>
       </nav>
       <section>{children}</section>
     </>

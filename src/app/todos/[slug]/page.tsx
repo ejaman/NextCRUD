@@ -19,3 +19,7 @@ export function generateStaticParams() {
     slug: cat,
   }));
 }
+
+export async function generateMetadata({ params }: Props) {
+  return { title: `TODO | ${params.slug}` };
+}
