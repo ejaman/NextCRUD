@@ -1,5 +1,5 @@
 import Meow from "@/components/meow";
-import { getToDos } from "@/service/todos";
+import { checkState, getToDos, TodoState } from "@/service/todos";
 import Link from "next/link";
 
 // export const revalidate = 3; // for ISR
@@ -11,15 +11,22 @@ export default async function Todo() {
 
   return (
     <>
-      <div>To do List</div>
-      <ul>
+      {/* <div className="flex justify-end">
+        <button className='bg-orange-400 hover:bg-orange-700 text-white font-medium py-2 px-4 rounded"'>
+          add
+        </button>
+      </div> */}
+      <ul className="p-2">
         {todos.map((todo) => (
           <li key={todo.id}>
-            <Link href={`todos/${todo.id}`}>{todo.title}</Link>
+            <Link className="font-medium flex gap-1" href={`todos/${todo.id}`}>
+              <div>{checkState(todo.state)}</div>
+              <p>{todo.title}</p>
+            </Link>
           </li>
         ))}
       </ul>
-      <Meow />
+      {/* <Meow /> */}
     </>
   );
 }

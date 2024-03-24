@@ -1,4 +1,4 @@
-import { getTodo, getToDos } from "@/service/todos";
+import { checkState, getTodo, getToDos } from "@/service/todos";
 import { notFound } from "next/navigation";
 
 export const revalidate = 3; // for ISR
@@ -16,7 +16,15 @@ export default async function Todo({ params: { slug } }: Props) {
     notFound();
   }
   // 서버 파일에 있는 데이터 중 해당 투두의 정보를 찾아서 그걸 보여줌
-  return <div>TODO - {todo.desc}</div>;
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="flex justify-between">
+        <div>제목: {todo.title}</div>
+        <div>{`${checkState(todo.state)} ${todo.state}`}</div>
+      </div>
+      <div className="whitespace-pre-wrap">{todo.desc}</div>
+    </div>
+  );
 }
 
 // 지정 x는 SSR, 지정 o는 SSG

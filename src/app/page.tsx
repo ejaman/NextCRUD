@@ -19,7 +19,7 @@ export default function Home() {
 
   return (
     <div>
-      first page
+      기능 확인
       <section>
         <Counter />
       </section>
