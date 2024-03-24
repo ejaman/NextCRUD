@@ -27,6 +27,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
-  return { title: `TODO | ${params.slug}` };
+export async function generateMetadata({ params: { slug } }: Props) {
+  const todo = await getTodo(slug);
+  return { title: `TODO | ${todo?.title}` };
 }
