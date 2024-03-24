@@ -1,8 +1,20 @@
+import Link from "next/link";
 import React from "react";
 
-const postList = "";
+const todoList = ["study next.js", "stay hydrated!", "10min home training"];
 
 export default function Todo() {
   let a;
-  return <div>todo</div>;
+  return (
+    <>
+      <div>TODO list</div>
+      <ul>
+        {todoList.map((todo, i) => (
+          <li key={i}>
+            <Link href={`todo/${todo}`}>{todo}</Link>
+          </li>
+        ))}
+      </ul>
+    </>
+  );
 }
