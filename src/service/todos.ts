@@ -1,7 +1,20 @@
-export function getToDos() {
-  return ["study", "workout", "take a nap", "post blog"];
+import path from "path";
+import { promises as fs } from "fs";
+
+export type Todo = {
+  id: string;
+  title: string;
+  desc: string;
+};
+
+export async function getToDos(): Promise<Todo[]> {
+  const filePath = path.join(process.cwd(), "data", "todos.json");
+  const data = await fs.readFile(filePath, "utf-8");
+  return JSON.parse(data);
 }
 
-export function getTodo(id: string) {
-  return "study";
+export async function getTodo(id: string): Promise<Todo | undefined> {
+  const todos = await getToDos();
+
+  return todos.find((todo) => todo.id === id);
 }
