@@ -20,7 +20,7 @@ export default async function Todo({ params: { slug } }: Props) {
 
 // 지정 x는 SSR, 지정 o는 SSG
 export async function generateStaticParams() {
-  // 모든 제품의 페이지들을 미리 만드러 둘 수 있도록 처리
+  // 모든 제품의 페이지들을 미리 만드러 둘 수 있도록 처리(SSG)
   const todos = await getToDos();
   return todos.map((todo) => ({
     slug: todo.id,
