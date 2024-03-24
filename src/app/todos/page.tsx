@@ -1,3 +1,4 @@
+import Meow from "@/components/meow";
 import { getToDos } from "@/service/todos";
 import Link from "next/link";
 
@@ -6,13 +7,6 @@ import Link from "next/link";
 export default async function Todo() {
   // 서버 파일(데이터 베이스)에 있는 투두의 리스트를 읽어와서, 그걸 보여줌
   const todos = await getToDos();
-  const res = await fetch("https://meowfacts.herokuapp.com", {
-    // next: { revalidate: 0 },
-    // default: force-cache, no-store -> SSR처럼 처리됨
-    // cache: "force-cache",
-  });
-  const data = await res.json();
-  const cateFact = data.data[0];
 
   return (
     <>
@@ -24,7 +18,7 @@ export default async function Todo() {
           </li>
         ))}
       </ul>
-      <article>{cateFact}</article>
+      <Meow />
     </>
   );
 }
