@@ -1,5 +1,5 @@
 1. file base 라우팅
-: page는 route마다 고유한 UI로 page.js 파일을 통해 정의할 수 있음
+- page는 route마다 고유한 UI로 page.js 파일을 통해 정의할 수 있음
 
 1-1. static routing: (정적)라우팅 위치 고정
 
@@ -18,4 +18,12 @@
 
 그래서 우리가 원하는 경로의 한하여 페이지를 미리 만들어 두고 싶다면
 미리 만들어 두고 싶은 페이지 명시 generateStaticParams
+
+
+
+2. layout
+- 여러 경로에서 공유되는 UI
+- 네비게이션에서 레이아웃은 state를 보존, interactive하며 re-render하지 않음
+- 중첩 가능
+
 

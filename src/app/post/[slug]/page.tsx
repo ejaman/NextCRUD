@@ -9,7 +9,7 @@ type Props = {
 // props로 어떤 경로인지 알려줌
 export default function Ilsang({ params }: Props) {
   let a;
-  return <div>{params.slug} ilsang</div>;
+  return <div>{params.slug} post!</div>;
 }
 
 // 지정 x는 SSR, 지정 o는 SSG
