@@ -18,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <header>Header Test</header>
+        <header>Main Header</header>
         <nav>
-          <Link href="/post">Post</Link>
+          <Link href="/todos">Todos</Link>
           <Link href="/about">About</Link>
           <Link href="/contact">Contact</Link>
         </nav>

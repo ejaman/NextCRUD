@@ -4,13 +4,13 @@ import React from "react";
 type Props = {
   children: React.ReactNode;
 };
-export default function PostLayout({ children }: Props) {
+export default function TodoLayout({ children }: Props) {
   return (
     <>
-      <div>check post layout</div>
+      <div>TODO layout</div>
       <nav>
-        <Link href="/post/ilsang">Ilsang</Link>
-        <Link href="/post/review">Review</Link>
+        <Link href="/post/study">Study</Link>
+        <Link href="/post/workout">Work out</Link>
       </nav>
       <section>{children}</section>
     </>

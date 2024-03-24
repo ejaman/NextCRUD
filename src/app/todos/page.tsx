@@ -2,7 +2,7 @@ import React from "react";
 
 const postList = "";
 
-export default function Post() {
+export default function Todo() {
   let a;
-  return <div>post</div>;
+  return <div>todo</div>;
 }
