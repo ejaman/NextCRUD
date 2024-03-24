@@ -1,6 +1,7 @@
 import { getTodo, getToDos } from "@/service/todos";
 import { notFound } from "next/navigation";
-import React from "react";
+
+export const revalidate = 3; // for ISR
 
 type Props = {
   params: {
