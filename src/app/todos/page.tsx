@@ -6,6 +6,7 @@ import Link from "next/link";
 
 export default async function Todo() {
   // 서버 파일(데이터 베이스)에 있는 투두의 리스트를 읽어와서, 그걸 보여줌
+  // throw new Error(); // for checking error UI
   const todos = await getToDos();
 
   return (
