@@ -16,7 +16,7 @@ type Props = {
 export default function TodoLayout({ children }: Props) {
   return (
     <>
-      <div>TODO layout</div>
+      <div>category</div>
       <nav>
         <Link href="/todos/todo">To do</Link>
         <Link href="/todos/doing">Working on</Link>

@@ -7,7 +7,7 @@ export default async function Todo() {
   const todos = await getToDos();
   return (
     <>
-      <div>TODO list</div>
+      <div>To do List</div>
       <ul>
         {todos.map((todo) => (
           <li key={todo.id}>
